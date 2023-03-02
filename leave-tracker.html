@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Leave Tracker by Jalil Dude</title>
+</head>
+
+<body>
+	<table id="leave-table"></table>
+
+	<script src="leave-tracker.js"></script>
+	
+	<script>	
+		
+		var leaveArr = changeLeaveArrayElementTo1(getLeavesArray(),1);
+		
+		leaveArr = changeLeaveArrayElementTo1(leaveArr,7);
+		
+		populateTable(getHeaderArray(),getYearlyWorkingDates(new Date('2023-01-01')),getYearlyWorkingDays(new Date('2023-01-01')),leaveArr,getBalanceArray(24,leaveArr));
+		
+	</script>
+</body>
+ 
+</html>
