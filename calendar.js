@@ -1,3 +1,8 @@
+function getMonthCaption(year, month) {
+  const date = new Date(year, month - 1); // month is 0-indexed in Date constructor
+  return date.toLocaleString('en-US', { month: 'long', year: 'numeric' });
+}
+
 function getMonthInfo(year, month) {
   // create a new Date object with the year and month
   const date = new Date(year, month - 1, 1);
@@ -17,24 +22,34 @@ function getMonthInfo(year, month) {
 function populateCalendar(year,month) {
   
   const table = document.getElementById("calendar-table");
-  const thead = document.getElementById("calendar-thead");
-  const headerRow = document.createElement("tr");
+  
+  /////////////////////////////////////////////////////////Caption/////////////////////////////
+  
+  const tCaption = document.getElementsByTagName("caption")[0];
+  
+  tCaption.textContent = getMonthCaption(year,month);
+  table.insertBefore(tCaption, table.firstChild);
+  ////////////////////////////////////////////////////////////////////////////////////////////////////////
+  
   
   /////////////////////////////////////////////////////////// First Row ///////////////////////////////////////////////////////////////
+  
+  const theadDOW = document.getElementById("dow-thead");
+  const headerDOWRow = document.createElement("tr");
   
   const daysArray = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
   
 	daysArray.forEach((headerText) => {
 	const headerCell = document.createElement("th");
 	headerCell.textContent = headerText;
-	headerRow.appendChild(headerCell);
+	headerDOWRow.appendChild(headerCell);
 	});
-	thead.appendChild(headerRow);
+	theadDOW.appendChild(headerDOWRow);
 	
   ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	
 	
-  //////////////////////////////////////////// ///////////Subsequent rows ///////////////////////////////////////////////////////////////	
+  ////////////////////////////////////////////////////////////Subsequent rows ///////////////////////////////////////////////////////////////	
 	
 	const daysInMonth = (getMonthInfo(year,month)).daysInMonth;
 	const firstDayOfWeek = (getMonthInfo(year,month)).firstDayOfWeek;
