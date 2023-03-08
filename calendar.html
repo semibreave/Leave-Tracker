@@ -12,12 +12,18 @@
 			width: 100%;
 		}
 		
+		caption{
+				font-Weight: bold;
+				font-size: 1.2em;
+		}
+		
 		th  {
 			background-color: #eee;
 			border: 1px solid #ccc;
 			font-weight: bold;
 			padding: 10px;
 			text-align: center;
+			
 		}
 		
 		td {
@@ -40,19 +46,26 @@
 
 <body>
 	<table id="calendar-table">
-		<thead id="calendar-thead">
+		
+		<caption>
+			
+		</caption>
+		
+		<thead id="dow-thead">
 			
 		</thead>
+	
 	</table>
 
 	<script src="calendar.js"></script>
 	
 	<script>	
 		
-		populateCalendar(2023,5);
+		populateCalendar(2023,3);
 
-		
 	</script>
+
 </body>
  
 </html>
+																
