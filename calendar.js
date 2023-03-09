@@ -19,6 +19,13 @@ function getMonthInfo(year, month) {
   };
 }
 
+function getCurrentMonthAndYear() {
+  const currentDate = new Date();
+  const currentMonth = currentDate.getMonth() + 1; // JavaScript counts months from 0 to 11, so we need to add 1
+  const currentYear = currentDate.getFullYear();
+  return { month: currentMonth, year: currentYear };
+}
+
 function populateCalendar(year,month) {
   
   const table = document.getElementById("calendar-table");
@@ -84,3 +91,27 @@ function populateCalendar(year,month) {
    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////	
 }
 
+function clearCalendarTable() {
+  
+  const table = document.getElementById('calendar-table');
+  const rows = table.getElementsByTagName('tr');
+
+   // Start from the last row, to avoid issues with index changes
+  for (let i = rows.length - 1; i >= 0; i--) 
+  {
+    table.deleteRow(i);
+  }
+}
+
+function addShowingMonthAndYear(){
+	
+	showingMonth += 1;
+	
+	showingYear += 1;
+}
+
+
+
+let showingYear = getCurrentMonthAndYear().year;
+
+let showingMonth = getCurrentMonthAndYear().month;
