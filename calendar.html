@@ -57,15 +57,33 @@
 	
 	</table>
 
+	
+	<button onclick="clearCalendarTable()">  
+	
+		< 
+	
+	</button>
+	
+	<button id="calendar-forward-button" onclick="clearCalendarTable();populateCalendar(2029,4)"> 
+	  
+		>
+	  
+	</button>
+	
+	
+	
+	
+	
 	<script src="calendar.js"></script>
 	
 	<script>	
 		
-		populateCalendar(2023,3);
-
+		
+		populateCalendar(getCurrentMonthAndYear().year,getCurrentMonthAndYear().month);
+		
+		
 	</script>
 
 </body>
  
 </html>
-																
