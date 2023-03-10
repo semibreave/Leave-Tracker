@@ -58,13 +58,13 @@
 	</table>
 
 	
-	<button onclick="clearCalendarTable()">  
+	<button id="calendar-backward-button" onclick="clearCalendarTable();minusShowingMonth();populateCalendar(showingYear,showingMonth)">  
 	
 		< 
 	
 	</button>
 	
-	<button id="calendar-forward-button" onclick="clearCalendarTable();populateCalendar(2029,4)"> 
+	<button id="calendar-forward-button" onclick="clearCalendarTable();addShowingMonth();populateCalendar(showingYear,showingMonth)"> 
 	  
 		>
 	  
@@ -87,3 +87,4 @@
 </body>
  
 </html>
+																											

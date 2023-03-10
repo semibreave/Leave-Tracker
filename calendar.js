@@ -61,7 +61,7 @@ function populateCalendar(year,month) {
 	const daysInMonth = (getMonthInfo(year,month)).daysInMonth;
 	const firstDayOfWeek = (getMonthInfo(year,month)).firstDayOfWeek;
 	
-	var dataRow = document.createElement("tr");
+	let dataRow = document.createElement("tr");
 	
 	if(firstDayOfWeek != 0){
 		
@@ -103,13 +103,18 @@ function clearCalendarTable() {
   }
 }
 
-function addShowingMonthAndYear(){
+function addShowingMonth(){
 	
 	showingMonth += 1;
 	
-	showingYear += 1;
 }
 
+
+function minusShowingMonth(){
+	
+	showingMonth -= 1;
+	
+}
 
 
 let showingYear = getCurrentMonthAndYear().year;
